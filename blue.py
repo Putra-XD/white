@@ -1,6 +1,5 @@
 # Full Open Source Code
 # Coded By @Putra XD
-l
 # https://github.com/Putra-XD
 
 #   Release Date : Jum,11 Feb,2022
